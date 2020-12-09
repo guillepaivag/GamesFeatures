@@ -1,0 +1,71 @@
+<%- include ('partials/cabeza') %>
+
+<div class="container mt-5">
+    <!-- action="/games/add-game" method="POST" -->
+    <form id="addGameForm" action="<%= route %>" method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Titulo:</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%- data.title %>" placeholder="Titulo">
+        </div>
+
+        <hr>
+
+        <label for="requirements">Requerimientos:</label>
+        <div class="card container" id="requirements">
+            <div class="form-group mt-3">
+                <label for="os">OS:</label>
+                <input type="text" class="form-control" id="os" name="os" value="<%- data.requirements.OS %>" placeholder="Titulo">
+            </div>
+            <div class="form-group">
+                <label for="processor">Procesador:</label>
+                <input type="text" class="form-control" id="processor" name="processor" value="<%- data.requirements.Processor %>" placeholder="Procesador">
+            </div>
+            <div class="form-group">
+                <label for="graphic">Grafica:</label>
+                <input type="text" class="form-control" id="graphic" name="graphic" value="<%- data.requirements.Graphics %>" placeholder="Grafica">
+            </div>
+            <div class="form-group">
+                <label for="memory">Memoria:</label>
+                <input type="text" class="form-control" id="memory" name="memory" value="<%- data.requirements.Memory %>" placeholder="Memoria">
+            </div>
+            <div class="form-group">
+                <label for="storage">Almacenamineto:</label>
+                <input type="text" class="form-control" id="storage" name="storage" value="<%- data.requirements.Storage %>" placeholder="Almacenamineto">
+            </div>
+            <div class="form-group mb-3">
+                <label for="DirectX">DirectX:</label>
+                <input type="text" class="form-control" id="DirectX" name="DirectX" value="<%- data.requirements.DirectX %>" placeholder="DirectX">
+            </div>
+        </div>
+        
+        <hr>
+
+        <label for="vendor">Requerimientos:</label>
+        <div class="card container" id="vendor">
+            <div class="form-group mt-3">
+                <label for="name">Nombre de la empresa:</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%- data.vendor.Name %>" placeholder="Nombre de la empresa">
+            </div>
+            <div class="form-group">
+                <label for="price">Precio:</label>
+                <input type="text" class="form-control" id="price" name="price" value="<%- data.vendor.Price %>" placeholder="Precio">
+            </div>
+            <div class="form-group">
+                <label for="siteWeb">URL del sitio web:</label>
+                <input type="text" class="form-control" id="siteWeb" name="siteWeb" value="<%- data.vendor.SiteWeb %>" placeholder="URL del sitio web">
+            </div>
+        </div>
+
+        <hr>
+
+        <% if(typeOperation == 'save'){ %>
+            <button type="submit" id="btnGames" class="btn btn-primary mb-4">Guardar</button>    
+        <% }else{ %>
+            <button type="submit" id="btnGamesEdit" class="btn btn-success mb-4">Actualizar</button>
+        <% } %> 
+    </form>
+</div>
+
+<script src="js/appGames.js"></script>
+
+<%- include ('partials/pie') %>

@@ -1,0 +1,24 @@
+<%- include ('partials/cabeza') %>
+
+<div class="jumbotron">
+    <h1 class="display-4">Bienvenido!</h1>
+    <p class="lead">Soy guillepaivag.</p>
+    <p class="lead">Trabajo: CRUD de juegos con NodeJs - ExpressJs - MongoDB - ejs.</p>
+    <hr class="my-4">
+    <p>Puedes agregar un juego aqui:</p>
+    <a class="btn btn-primary btn-lg" href="/games" role="button">Agregar</a>
+</div>
+
+<div class="container">
+    <div class="card mt-5">
+        <h5 class="card-header">Lista de juegos:</h5>
+        <div class="card-body">
+            <p class="card-text">Puedes ver la lista de los juegos aqui.</p>
+            <a href="/games/view-games" class="btn btn-primary">Ver juegos</a>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include ('partials/pie') %>

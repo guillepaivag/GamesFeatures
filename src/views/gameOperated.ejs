@@ -1,0 +1,56 @@
+<%- include ('partials/cabeza') %>
+
+
+<div class="container">
+    <h1 class="mt-5"><%- theme %> </h1>
+
+    <div class="card mt-5">
+        <div class="row no-gutters">
+            <div class="col-md-4 mt-3">
+                <label class="ml-3" for="listRequirements">Requerimientos:</label>
+                <ul id="listRequirements">
+                    <li>
+                        <b>OS:</b>
+                        <%- data.requirements.OS %>
+                    </li>
+                    <li>
+                        <b>Processor:</b>
+                        <%- data.requirements.Processor %>
+                    </li>
+                    <li>
+                        <b>Graphics:</b>
+                        <%- data.requirements.Graphics %>
+                    </li>
+                    <li>
+                        <b>Memory:</b>
+                        <%- data.requirements.Memory %>
+                    </li>
+                    <li>
+                        <b>Storage:</b>
+                        <%- data.requirements.Storage %>
+                    </li>
+                    <li>
+                        <b>DirectX:</b>
+                        <%- data.requirements.DirectX %>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre del juego: <%- data.title %> </h5>
+                    <hr>
+                    <p class="card-text">
+                        Nombre: <%- data.vendor.Name %>
+                        <hr>
+                        Price: <%- data.vendor.Price %>
+                        <hr>
+                        SiteWeb: <%- data.vendor.SiteWeb %>
+                        <hr>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/pie') %>

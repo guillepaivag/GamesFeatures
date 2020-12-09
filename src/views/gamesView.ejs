@@ -1,0 +1,81 @@
+<%- include ('partials/cabeza') %>
+
+<div class="container mt-5">
+    <H1>LISTA DE JUEGOS</H1>
+
+    <% if(data.length > 0){ %>
+    <% for( let i = 0; i < data.length; i++ ) { %>
+
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4 mt-3">
+                <label class="ml-3" for="listRequirements">Requerimientos:</label>
+                <ul id="listRequirements">
+                    <li>
+                        <b>OS:</b>
+                        <%- data[i].requirements.OS %>
+                    </li>
+                    <li>
+                        <b>Processor:</b>
+                        <%- data[i].requirements.Processor %>
+                    </li>
+                    <li>
+                        <b>Graphics:</b>
+                        <%- data[i].requirements.Graphics %>
+                    </li>
+                    <li>
+                        <b>Memory:</b>
+                        <%- data[i].requirements.Memory %>
+                    </li>
+                    <li>
+                        <b>Storage:</b>
+                        <%- data[i].requirements.Storage %>
+                    </li>
+                    <li>
+                        <b>DirectX:</b>
+                        <%- data[i].requirements.DirectX %>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre del juego: <%- data[i].title %> </h5>
+                    <hr>
+                    <p class="card-text">
+                        Nombre: <%- data[i].vendor.Name %>
+                        <hr>
+                        Price: <%- data[i].vendor.Price %>
+                        <hr>
+                        SiteWeb: <%- data[i].vendor.SiteWeb %>
+                        <hr>
+                    </p>
+                    <form method="POST" action="/games/send-data-update/<%- data[i]._id %> ">
+                        <button type="submit" class="btn btn-outline-success btn-block mt-3">EDITAR</button>
+                    </form>
+                    <form method="POST" action="/games/delete-game/<%- data[i]._id %>">
+                        <button type="submit" class="btn btn-outline-danger btn-block mt-3">ELIMINAR</button>
+                        <!-- <a href="/games/delete-game/LAID" class="btn btn-outline-danger">ELIMINAR</a> -->
+                    </form>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% } %>
+    <% }else { %>
+    <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+        <h4 class="alert-heading">No hay juegos en la lista :(</h4>
+        <p>Puedes agregar aqui!</p>
+        <hr>
+        <a href="/games" type="button" class="btn btn-outline-primary">Agregar</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% } %>
+</div>
+
+
+
+<%- include ('partials/pie') %>
