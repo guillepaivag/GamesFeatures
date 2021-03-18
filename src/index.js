@@ -5,10 +5,10 @@ if(process.env.NODE_ENV == 'development'){
 // Requerimientos
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const path = require('path')
 const gamesRoutes = require('./routes/games')
 const generalRoutes = require('./routes/general')
-const cors = require('cors')
 require('./dataBase/dbGames')
 
 // Inicializaciones
